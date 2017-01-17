@@ -52,7 +52,7 @@ case $response in
         ;;
 esac
 
-cat > /etc/supervisor/shadowsocks.conf<<-EOF
+cat > /etc/supervisor/conf.d/shadowsocks.conf<<-EOF
 [program:shadowsocks]
 
 command=shadowsocks-server
@@ -66,6 +66,8 @@ redirect_stderr=true
 stdout_logfile=/var/log/shadowsocks-server.out.log
 stderr_logfile=/var/log/shadowsocks-server.err.log
 EOF
+
+systemctl enable supervisor
 
 echo "3 4 * * 1 root reboot" >> /etc/crontab
 apt-get -y autoremove
