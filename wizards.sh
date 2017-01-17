@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 cd /tmp
 
@@ -7,7 +8,7 @@ apt-get -y upgrade
 apt-get -y install supervisor
 
 wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.4/linux-image-4.9.4-040904-generic_4.9.4-040904.201701150831_amd64.deb
-dpkg -i linux-image-4.9.4-040904-generic_4.9.4-040904.201701150831_amd64.deb
+dpkg -i linux-image-4.9.*.deb
 update-grub
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
