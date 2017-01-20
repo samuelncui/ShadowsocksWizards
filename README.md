@@ -16,6 +16,7 @@ sudo bash wizards.sh
  * 自动安装 shadowsocks-go，并询问是否更改默认配置
  * 自动安装 Google TCP BBR
  * 询问响应类型，并根据响应类型进行 TCP 优化
+ * 询问是否自动进行重启
  * 自动添加每周重启，防止长时间开机后死机
  * 自动安装 supervisor 作为守护进程
  * 自动清理缓存文件

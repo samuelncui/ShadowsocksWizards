@@ -74,4 +74,11 @@ echo "3 4 * * 1 root reboot" >> /etc/crontab
 apt-get -y autoremove
 apt-get -y autoclean
 
-reboot
+read -r -p "Do you want to reboot now? [Y/n]: " response
+case $response in
+    [nN]*)
+        ;;
+    *)
+        reboot
+        ;;
+esac
